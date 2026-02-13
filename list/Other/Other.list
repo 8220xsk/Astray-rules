@@ -1,0 +1,13 @@
+# NAME: Other
+# AUTHOR: 8220xsk
+# REPO: https://github.com/8220xsk/Astray-rule
+# UPDATED: 2026-02-13 11:12:13
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 4
+# IP-CIDR: 0
+# TOTAL: 4
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,fc2ppvdb.com
