@@ -1,20 +1,14 @@
 # NAME: Streaming
 # AUTHOR: 8220xsk
 # REPO: https://github.com/8220xsk/Astray-rule
-# UPDATED: 2026-02-24 12:13:14
+# UPDATED: 2026-02-11 11:12:13
 # DOMAIN: 0
 # DOMAIN-KEYWORD: 0
 # DOMAIN-SUFFIX: 4
 # IP-CIDR: 0
 # TOTAL: 4
-# missav
-DOMAIN-SUFFIX,surrit.com
-# javxx
-DOMAIN-SUFFIX,wowstream.cloud
-# mat6tube
-# noodlemagazine
-DOMAIN-SUFFIX,pvvstream.pro
-# x1hub
-DOMAIN-SUFFIX,qoocdn.com
-# tktube
-DOMAIN-SUFFIX,cloudflarestorage.com
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,fc2ppvdb.com
+DOMAIN-SUFFIX,tuodan.tech
