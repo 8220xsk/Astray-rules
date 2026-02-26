@@ -20,3 +20,5 @@ DOMAIN-SUFFIX,qoocdn.com
 DOMAIN-SUFFIX,cloudflarestorage.com
 # youtube
 DOMAIN-SUFFIX,googlevideo.com
+# odysee
+DOMAIN-SUFFIX,odycdn.com
