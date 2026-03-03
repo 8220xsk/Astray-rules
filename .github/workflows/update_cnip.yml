@@ -14,27 +14,22 @@ jobs:
 
       - name: Process IP Data
         run: |
-          # 创建存放目录
           mkdir -p list/Other/
-          
-          # 1. 抓取原始数据
           curl -s https://www.iwik.org/ipcountry/mikrotik/CN -o raw_data.txt
           
-          # 2. 初始化 cnip.rsc
+          # 1. 写入头部信息
           echo "/ip firewall address-list" > cnip.rsc
           echo "remove [/ip firewall address-list find list=CNIP]" >> cnip.rsc
-          
-          # 3. 添加私有网段
           echo "add address=192.168.0.0/16 list=CNIP comment=private-network" >> cnip.rsc
           echo "add address=10.0.0.0/8 list=CNIP comment=private-network" >> cnip.rsc
           
-          # 4. 提取并转换数据
+          # 2. 提取并清洗数据
           # grep: 只保留包含 'add address=' 的行
-          # sed 1: 去掉 'do { ' 和 ' } on-error={}'
-          # sed 2: 将 list=CN 替换为 list=CNIP
-          grep "add address=" raw_data.txt | sed -E 's/do \{ (.*) \} on-error=\{}/\1/' | sed 's/list=CN/list=CNIP/g' >> cnip.rsc
+          # sed 's/^://': 删掉行首的冒号
+          # sed 's/do \{ (.*) \} on-error=\{}/\1/': 剥离 do{...}
+          # sed 's/list=CN/list=CNIP/g': 替换列表名称
+          grep "add address=" raw_data.txt | sed 's/^://' | sed -E 's/do \{ (.*) \} on-error=\{}/\1/' | sed 's/list=CN/list=CNIP/g' >> cnip.rsc
           
-          # 5. 移动到目标路径
           mv cnip.rsc list/Other/cnip.rsc
 
       - name: Commit and Push
@@ -42,4 +37,4 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add list/Other/cnip.rsc
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update CNIP list (cleaned)" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update CNIP: removed leading colon" && git push)
