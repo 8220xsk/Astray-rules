@@ -2,9 +2,6 @@
 remove [/ip firewall address-list find list=CNIP]
 add address=192.168.0.0/16 list=CNIP comment=private-network
 add address=10.0.0.0/8 list=CNIP comment=private-network
-/log info "Loading CN ipv4 address list"
-/ip firewall address-list remove [/ip firewall address-list find list=CNIP]
-/ip firewall address-list
 :add address=1.0.1.0/24 list=CNIP
 :add address=1.0.2.0/23 list=CNIP
 :add address=1.0.8.0/21 list=CNIP
@@ -7746,4 +7743,3 @@ add address=10.0.0.0/8 list=CNIP comment=private-network
 :add address=223.255.0.0/17 list=CNIP
 :add address=223.255.236.0/22 list=CNIP
 :add address=223.255.252.0/23 list=CNIP
-
