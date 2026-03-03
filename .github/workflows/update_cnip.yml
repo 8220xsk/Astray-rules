@@ -2,8 +2,10 @@ name: Update MikroTik CNIP List
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    # 這裡的格式是：'分 時 日 月 週'
+    # 0 0 5 * * 表示：每個月的 5 號 凌晨 00:00 (UTC時間)
+    - cron: '0 0 5 * *'
+  workflow_dispatch: # 保留這個，這樣你隨時想更新時還可以手動點擊按鈕執行
 
 jobs:
   update_list:
