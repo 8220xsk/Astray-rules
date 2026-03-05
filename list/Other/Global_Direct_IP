@@ -1,0 +1,11 @@
+# NAME: Global_Direct_IP
+# AUTHOR: 8220xsk
+# REPO: https://github.com/8220xsk/Astray-rule
+# UPDATED: 2026-02-24 12:13:14
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 4
+# IP-CIDR: 0
+# TOTAL: 4
+# futu
+IP-CIDR,170.106.47.153/32,no-resolve
