@@ -1,4 +1,4 @@
-# NAME: Global_Direct_IP
+ # NAME: Global_Direct_IP
 # AUTHOR: 8220xsk
 # REPO: https://github.com/8220xsk/Astray-rule
 # UPDATED: 2026-02-24 12:13:14
@@ -9,3 +9,7 @@
 # TOTAL: 4
 # futu
 IP-CIDR,101.32.217.163/32,no-resolve
+IP-CIDR,101.32.217.2/32,no-resolve
+IP-CIDR,129.226.111.140/32,no-resolve
+IP-CIDR,101.32.56.30/32,no-resolve
+# IP-CIDR,103.195.103.66/32,no-resolve
