@@ -1,7 +1,7 @@
 # NAME: Global_Domain_Use_CN_Proxy
 # AUTHOR: 8220xsk
 # REPO: https://github.com/8220xsk/Astray-rules
-# UPDATED: 2026-09-01 23:31:11
+# UPDATED: 2026-09-01 23:35:18
 # DOMAIN: 0
 # DOMAIN-KEYWORD: 0
 # DOMAIN-SUFFIX: 3
@@ -9,7 +9,6 @@
 # IP-CIDR6: 0
 # TOTAL: 3
 
-# bemani论坛
 DOMAIN-SUFFIX,bemanicn.cc
 DOMAIN-SUFFIX,bemani.cc
 DOMAIN-SUFFIX,bemanicn.com
