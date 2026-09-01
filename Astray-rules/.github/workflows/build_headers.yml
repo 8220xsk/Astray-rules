@@ -1,0 +1,28 @@
+name: Auto Build Rules Header
+
+on:
+  push:
+    paths:
+      - 'Rules/Clash/*.list'  # 监听 Rules/Clash/ 目录下所有 .list 文件的变动
+  workflow_dispatch:          # 允许在 GitHub 网页侧边栏手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Build Script
+        run: python scripts/build_rules.py
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto update rule headers and metrics [skip ci]"
+          file_pattern: 'Rules/Clash/*.list'
