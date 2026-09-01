@@ -2,8 +2,8 @@ import os
 from datetime import datetime, timezone, timedelta
 
 # 配置信息（请修改为你自己的用户名和仓库名）
-AUTHOR = "yourname"
-REPO_URL = "https://github.com/yourname/your-repo"
+AUTHOR = "8220xsk"
+REPO_URL = "https://github.com/8220xsk/Astray-rules"
 
 # 需要处理的文件相对路径列表
 FILES = [
