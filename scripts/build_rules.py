@@ -1,11 +1,9 @@
 import os
 from datetime import datetime, timezone, timedelta
 
-# 配置信息（请修改为你自己的用户名和仓库名）
 AUTHOR = "8220xsk"
 REPO_URL = "https://github.com/8220xsk/Astray-rules"
 
-# 需要处理的文件相对路径列表
 FILES = [
     "Rules/Clash/CN_Domain_Use_Global_Proxy.list",
     "Rules/Clash/Global_Domain_Use_CN_Proxy.list",
@@ -19,7 +17,6 @@ def process_file(file_path):
 
     rule_name = os.path.splitext(os.path.basename(file_path))[0]
 
-    # 定义 Header 专属的关键字前缀
     HEADER_KEYS = (
         "# NAME:", "# AUTHOR:", "# REPO:", "# UPDATED:", 
         "# DOMAIN:", "# DOMAIN-KEYWORD:", "# DOMAIN-SUFFIX:", 
@@ -30,16 +27,13 @@ def process_file(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             stripped = line.strip()
-            # 只有当行是以 Header 关键字开头时才跳过，保留其他所有内容（包括普通 # 注释）
             if any(stripped.startswith(key) for key in HEADER_KEYS):
                 continue
             clean_lines.append(stripped)
 
-    # 去除开头的空行，保留有效内容
     while clean_lines and not clean_lines[0]:
         clean_lines.pop(0)
 
-    # 仅对规则行进行统计（忽略以 # 开头的普通注释行）
     rules_only = [l for l in clean_lines if l and not l.startswith("#")]
 
     counts = {
@@ -66,8 +60,12 @@ def process_file(file_path):
 # TOTAL: {total}
 """
 
-    # 重新拼接文件：Header + 你的普通注释与规则
     content = header + "\n" + "\n".join(clean_lines) + "\n"
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"成功更新: {file_path}")
+
+# 必须要加这一段调用代码！
+if __name__ == "__main__":
+    for file in FILES:
+        process_file(file)
