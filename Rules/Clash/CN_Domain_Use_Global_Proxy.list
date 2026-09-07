@@ -1,3 +1,14 @@
+# NAME: CN_Domain_Use_Global_Proxy
+# AUTHOR: 8220xsk
+# REPO: https://github.com/8220xsk/Astray-rules
+# UPDATED: 2026-09-08 00:22:09
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 2
+# IP-CIDR: 0
+# IP-CIDR6: 0
+# TOTAL: 2
+
 # 二狗
 DOMAIN-SUFFIX,tuodan.tech
 ##
